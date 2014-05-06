@@ -8,14 +8,9 @@ class StackMachineEmulator
 
     expression_string.chars.each do |expression_character|
       @stack.push Operand.new(expression_character) if Operand.new(expression_character).valid?
-      apply_operator(expression_character) if Operator.new(expression_character).valid?
+      @stack.push Operator.new(expression_character).apply(@stack.pop, @stack.pop) if Operator.new(expression_character).valid?
     end
 
     @stack.pop
-  end
-
-  private
-  def apply_operator(operator)
-    @stack.push(Operator.new(operator).apply(@stack.pop, @stack.pop))
   end
 end
