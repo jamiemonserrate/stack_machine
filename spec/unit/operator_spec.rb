@@ -3,7 +3,9 @@ require 'spec_helper'
 describe Operator do
   context '#valid?' do
     it 'should return true if is valid operator' do
-      expect(Operator.valid?('+')).to be(true)
+      ['+', '*'].each do |valid_operator|
+        expect(Operator.valid?(valid_operator)).to be(true)
+      end
     end
 
     it 'should return false for operands' do

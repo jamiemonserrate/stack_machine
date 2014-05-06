@@ -1,5 +1,5 @@
 class Operator
-  VALID_OPERATORS = ['+']
+  VALID_OPERATORS = ['+', '*']
 
   def initialize(value)
     raise "Invalid operator!" unless self.class.valid? value

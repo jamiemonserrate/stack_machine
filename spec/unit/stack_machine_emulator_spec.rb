@@ -9,5 +9,9 @@ describe StackMachineEmulator do
     it 'should be able to evaluate a simple addition of 2 numbers' do
       expect(StackMachineEmulator.new.evaluate('11+')).to eq(2)
     end
+
+    it 'should be able to evaluate a simple multiplication of 2 numbers' do
+      expect(StackMachineEmulator.new.evaluate('22*')).to eq(4)
+    end
   end
 end

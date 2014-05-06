@@ -18,4 +18,8 @@ class Operand
   def +(another_operand)
     value + another_operand.value
   end
+
+  def *(another_operand)
+    value * another_operand.value
+  end
 end
