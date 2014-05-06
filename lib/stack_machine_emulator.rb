@@ -1,0 +1,3 @@
+class StackMachineEmulator
+  
+end
