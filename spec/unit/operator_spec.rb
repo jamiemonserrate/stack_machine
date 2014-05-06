@@ -18,4 +18,10 @@ describe Operator do
       end
     end
   end
+
+  context '#apply' do
+    it 'should apply operator to valid operands and return the result' do
+      expect(Operator.new('+').apply(1,1)).to eq(2)
+    end
+  end
 end

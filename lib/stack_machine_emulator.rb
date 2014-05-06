@@ -15,8 +15,8 @@ class StackMachineEmulator
   end
 
   private
-  def apply_operator(operand)
-    @stack.push(@stack.pop.send(operand, @stack.pop))
+  def apply_operator(operator)
+    @stack.push(Operator.new(operator).apply(@stack.pop, @stack.pop))
   end
 
   def is_operand?(expression_character)
