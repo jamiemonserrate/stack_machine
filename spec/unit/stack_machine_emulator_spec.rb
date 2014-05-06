@@ -13,5 +13,9 @@ describe StackMachineEmulator do
     it 'should be able to evaluate a simple multiplication of 2 numbers' do
       expect(StackMachineEmulator.new.evaluate('22*')).to eq(4)
     end
+
+    it 'should be able to evaluate two operators' do
+      expect(StackMachineEmulator.new.evaluate('111++')).to eq(3)
+    end
   end
 end

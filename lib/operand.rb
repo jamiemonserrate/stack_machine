@@ -16,11 +16,11 @@ class Operand
   end
 
   def +(another_operand)
-    value + another_operand.value
+    Operand.new(value + another_operand.value)
   end
 
   def *(another_operand)
-    value * another_operand.value
+    Operand.new(value * another_operand.value)
   end
 
   def ==(another_operand)

@@ -11,6 +11,6 @@ class StackMachineEmulator
       @stack.push Operator.new(expression_character).apply(@stack.pop, @stack.pop) if Operator.valid?(expression_character)
     end
 
-    @stack.pop
+    @stack.pop.value
   end
 end
