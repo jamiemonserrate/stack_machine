@@ -2,11 +2,13 @@ class Operand
   VALID_OPERANDS = (0..9).collect(&:to_s)
 
   def initialize(value)
+    raise "Invalid operand!" unless self.class.valid? value
+
     @value = value
   end
 
-  def valid?
-    VALID_OPERANDS.include?(@value.to_s)
+  def self.valid?(value)
+    VALID_OPERANDS.include?(value.to_s)
   end
 
   def value

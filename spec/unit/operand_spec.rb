@@ -4,18 +4,24 @@ describe Operand do
   context '#valid?' do
     it 'should return true if is valid string operand' do
       (0..9).each do |valid_operand|
-        expect(Operand.new(valid_operand.to_s).valid?).to be(true)
+        expect(Operand.valid?(valid_operand.to_s)).to be(true)
       end
     end
 
     it 'should return true if is valid numeric operand' do
       (0..9).each do |valid_operand|
-        expect(Operand.new(valid_operand).valid?).to be(true)
+        expect(Operand.valid?(valid_operand)).to be(true)
       end
     end
 
     it 'should return false if is invalid operand' do
-      expect(Operand.new('+').valid?).to eq(false)
+      expect(Operand.valid?('+')).to eq(false)
+    end
+  end
+
+  context '#initialize' do
+    it 'should not be able to initialize with an invalid value' do
+      expect {Operand.new('+')}.to raise_error("Invalid operand!")
     end
   end
 
