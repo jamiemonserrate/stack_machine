@@ -8,7 +8,7 @@ class StackMachineEmulator
 
     expression_string.chars.each do |expression_character|
       @stack.push expression_character.to_i if is_operand?(expression_character)
-      apply_operator(expression_character) if is_operator?(expression_character)
+      apply_operator(expression_character) if Operator.new(expression_character).valid?
     end
 
     @stack.pop
@@ -21,9 +21,5 @@ class StackMachineEmulator
 
   def is_operand?(expression_character)
     (0..9).collect(&:to_s).include? expression_character
-  end
-
-  def is_operator?(expression_character)
-    ['+'].include? expression_character
   end
 end
