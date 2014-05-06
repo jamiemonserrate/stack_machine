@@ -38,4 +38,16 @@ describe Operand do
       end
     end
   end
+
+  context '#+' do
+    it 'should be able to add 2 operands' do
+      expect(Operand.new('1') + Operand.new('1')).to eq(2)
+    end
+  end
+
+  context '#*' do
+    it 'should be able to multiply 2 operands' do
+      expect(Operand.new('2') * Operand.new('2')).to eq(4)
+    end
+  end
 end
