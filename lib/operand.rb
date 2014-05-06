@@ -8,7 +8,7 @@ class Operand
   end
 
   def self.valid?(value)
-    VALID_OPERANDS.include?(value.to_s)
+    value.to_s.chars.all? {|digit| VALID_OPERANDS.include? digit}
   end
 
   def value

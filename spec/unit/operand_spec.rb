@@ -14,8 +14,13 @@ describe Operand do
       end
     end
 
+    it 'should return true if is more than single digit operand' do
+      expect(Operand.valid?('12')).to be(true)
+    end
+
     it 'should return false if is invalid operand' do
       expect(Operand.valid?('+')).to eq(false)
+      expect(Operand.valid?('1+')).to eq(false)
     end
   end
 
