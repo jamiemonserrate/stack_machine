@@ -2,11 +2,13 @@ class Operator
   VALID_OPERATORS = ['+']
 
   def initialize(value)
+    raise "Invalid operator!" unless self.class.valid? value
+
     @value = value
   end
 
-  def valid?
-    VALID_OPERATORS.include? @value
+  def self.valid?(value)
+    VALID_OPERATORS.include? value
   end
 
   def apply(operand1, operand2)
