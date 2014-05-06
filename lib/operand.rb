@@ -22,4 +22,16 @@ class Operand
   def *(another_operand)
     value * another_operand.value
   end
+
+  def ==(another_operand)
+    self.value == another_operand.value
+  end
+
+  def eql?(another_operand)
+    self == another_operand
+  end
+
+  def hash
+    self.another_operand.hash
+  end
 end

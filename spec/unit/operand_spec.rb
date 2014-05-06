@@ -25,6 +25,16 @@ describe Operand do
     end
   end
 
+  context '#equals' do
+    it 'should return true if objects have same value' do
+      expect(Operand.new('1')).to eq(Operand.new('1'))
+    end
+
+    it 'should return false if objects have different value' do
+      expect(Operand.new('1')).to_not eq(Operand.new('2'))
+    end
+  end
+
   context '#value' do
     it 'should return an integer value of a string that can be used to perform arithmetic operations' do
       (0..9).each do |numeric_operator|
