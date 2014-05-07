@@ -8,7 +8,7 @@ class StackMachineEmulator
   def evaluate(expression_string)
     return FAILURE_CODE unless ExpressionString.valid?(expression_string)
 
-    expression_string.chars.each do |expression_character|
+    ExpressionString.new(expression_string).each_expression_character do |expression_character|
       if Operand.valid?(expression_character)
         @stack.push Operand.new(expression_character)
       elsif Operator.valid?(expression_character) and @stack.size >= 2

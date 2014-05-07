@@ -13,4 +13,17 @@ describe ExpressionString do
     end
   end
 
+  context '#initialize' do
+    it 'should not be able to initialize with an invalid value' do
+      expect {ExpressionString.new('j')}.to raise_error('Invalid expression string!')
+    end
+  end
+
+  context '#each_expression_character' do
+    it 'should yield a block for each expression character' do
+      expression_string = ExpressionString.new('11+')
+      expect { |b| expression_string.each_expression_character(&b)}.to yield_successive_args('1', '1', '+')
+    end
+  end
+
 end
