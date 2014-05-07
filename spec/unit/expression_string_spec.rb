@@ -11,6 +11,10 @@ describe ExpressionString do
       expect(ExpressionString.valid?('')).to eq(false)
       expect(ExpressionString.valid?(nil)).to eq(false)
     end
+
+    it 'should return false if expression string is too long' do
+      expect(ExpressionString.valid?('1'*1000001)).to eq(false)
+    end
   end
 
   context '#initialize' do
