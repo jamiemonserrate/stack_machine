@@ -21,5 +21,9 @@ describe StackMachineEmulator do
     it 'should be able to evaluate a complex operation' do
       expect(StackMachineEmulator.new.evaluate('13+62*7+*')).to eq(76)
     end
+
+    it 'should return -1 in case the expression is invalid' do
+      expect(StackMachineEmulator.new.evaluate('11++')).to eq(-1)
+    end
   end
 end
