@@ -22,6 +22,10 @@ describe Operand do
       expect(Operand.valid?('+')).to eq(false)
       expect(Operand.valid?('1+')).to eq(false)
     end
+
+    it 'should return false if is operand needs more than 12 bit to represent' do
+      expect(Operand.valid?('4096')).to eq(false)
+    end
   end
 
   context '#initialize' do

@@ -40,6 +40,10 @@ describe StackMachineEmulator do
       it 'should return -1 in case expression is nil' do
         expect(stack_machine_emulator.evaluate(nil)).to eq(-1)
       end
+
+      it 'should return -1 in case of overflow' do
+        expect(StackMachineEmulator.new.evaluate('9999***')).to eq(-1)
+      end
     end
 
   end
