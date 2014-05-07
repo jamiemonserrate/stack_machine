@@ -3,7 +3,7 @@ class Operand
   MAX_12_BIT_INTEGER = 4095 #calculated by the formula (2 ** 12) - 1
 
   def initialize(value)
-    raise "Invalid operand!" unless self.class.valid? value
+    raise 'Invalid operand!' unless self.class.valid? value
 
     @value = value
   end
@@ -33,6 +33,6 @@ class Operand
   end
 
   def hash
-    self.another_operand.hash
+    self.value.hash
   end
 end
