@@ -23,7 +23,7 @@ describe Operator do
 
   context '#initialize' do
     it 'should not be able to initialize with an invalid value' do
-      expect {Operator.new('1')}.to raise_error("Invalid operator!")
+      expect {Operator.new('1')}.to raise_error('Invalid operator!')
     end
   end
 

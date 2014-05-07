@@ -26,7 +26,7 @@ describe Operand do
 
   context '#initialize' do
     it 'should not be able to initialize with an invalid value' do
-      expect {Operand.new('+')}.to raise_error("Invalid operand!")
+      expect {Operand.new('+')}.to raise_error('Invalid operand!')
     end
   end
 
