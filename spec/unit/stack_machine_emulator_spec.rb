@@ -22,8 +22,23 @@ describe StackMachineEmulator do
       expect(StackMachineEmulator.new.evaluate('13+62*7+*')).to eq(76)
     end
 
-    it 'should return -1 in case the expression is invalid' do
-      expect(StackMachineEmulator.new.evaluate('11++')).to eq(-1)
+    context 'failure scenarios' do
+      it 'should return -1 in case the expression is invalid' do
+        expect(StackMachineEmulator.new.evaluate('11++')).to eq(-1)
+      end
+
+      it 'should return -1 in case expression contains invalid characters' do
+        expect(StackMachineEmulator.new.evaluate('mj+')).to eq(-1)
+      end
+
+      it 'should return -1 in case expression is empty' do
+        expect(StackMachineEmulator.new.evaluate('')).to eq(-1)
+      end
+
+      it 'should return -1 in case expression is nil' do
+        expect(StackMachineEmulator.new.evaluate(nil)).to eq(-1)
+      end
     end
+
   end
 end
