@@ -12,4 +12,8 @@ class Stack
 
     @stack.pop
   end
+
+  def has_more_than_one_element?
+    @stack.size > 1
+  end
 end

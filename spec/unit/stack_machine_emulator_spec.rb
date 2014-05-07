@@ -25,8 +25,12 @@ describe StackMachineEmulator do
     end
 
     context 'failure scenarios' do
-      it 'should return -1 in case the expression is invalid' do
+      it 'should return -1 in case the expression has extra operators' do
         expect(stack_machine_emulator.evaluate('11++')).to eq(-1)
+      end
+
+      it 'should return -1 in case the expression has extra operands' do
+        expect(stack_machine_emulator.evaluate('111+')).to eq(-1)
       end
 
       it 'should return -1 in case expression contains invalid characters' do

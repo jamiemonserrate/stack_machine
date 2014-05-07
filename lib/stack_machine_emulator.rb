@@ -20,6 +20,8 @@ class StackMachineEmulator
       end
     end
 
+    return FAILURE_CODE if @stack.has_more_than_one_element?
+
     @stack.pop.value
   end
 end
