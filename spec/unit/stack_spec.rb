@@ -3,16 +3,20 @@ require 'spec_helper'
 describe Stack do
   let(:stack) { Stack.new }
 
-  it 'should support push and pop operations' do
-    stack.push(Operand.new('1'))
-    stack.push(Operand.new('2'))
+  context '#push and #pop' do
+    it 'should support push and pop operations' do
+      stack.push(Operand.new('1'))
+      stack.push(Operand.new('2'))
 
-    expect(stack.pop).to eq(Operand.new('2'))
-    expect(stack.pop).to eq(Operand.new('1'))
+      expect(stack.pop).to eq(Operand.new('2'))
+      expect(stack.pop).to eq(Operand.new('1'))
+    end
   end
 
-  it 'should raise exception if an empty stack is popped' do
-    expect { stack.pop }.to raise_error('Nothing to pop!')
+  context '#initialize' do
+    it 'should raise exception if an empty stack is popped' do
+      expect { stack.pop }.to raise_error('Nothing to pop!')
+    end
   end
 
   context '#has_more_than_one_element?' do
